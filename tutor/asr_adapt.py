@@ -188,6 +188,8 @@ def transcribe_and_detect(
     1) :func:`transcribe_whisper_tiny_faster` (runs :func:`preprocess_child_mic_for_whisper` +
     VAD in faster-whisper). 2) :func:`tutor.lang_detect.detect_language` on the transcript for
     tutor TTS. Recommended when language may be mixed or unknown (``language=None``).
+
+    **Import:** ``from tutor.asr_adapt import transcribe_and_detect`` (used by ``demo.py`` mic).
     """
     from tutor.lang_detect import detect_language
 
@@ -197,7 +199,11 @@ def transcribe_and_detect(
         language=language,
         compute_type=compute_type,
     )
-    return text, detect_language(text)
+    try:
+        lang: LanguageCode = detect_language(text)
+    except Exception:
+        lang = "en"
+    return text, lang
 
 
 def transcribe_gradio_audio(
@@ -284,3 +290,16 @@ def child_speech_data_recipe() -> str:
         "Inference: preprocess_child_mic_for_whisper in asr_adapt (norm, noisereduce, "
         "pitch down) + transcribe_and_detect for lang_detect."
     )
+
+
+__all__ = [
+    "WHISPER_TINY_HF",
+    "MMS_1B_ALL_HF",
+    "preprocess_child_mic_for_whisper",
+    "transcribe_whisper_tiny_faster",
+    "transcribe_and_detect",
+    "transcribe_gradio_audio",
+    "transcribe_gradio_and_detect",
+    "transcribe_mms_1b_all",
+    "child_speech_data_recipe",
+]

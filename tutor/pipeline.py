@@ -36,6 +36,11 @@ class ScoreResult:
 
 @dataclass
 class TutorSession:
+    """
+    Sequenced curriculum play. :meth:`reset_to_demo_start` is used by ``demo.py`` on first load
+    (seeks a friendly ``count_image`` like ``c2``).
+    """
+
     items: list[CurriculumItem]
     language: LanguageCode = "en"
     learner_id: str = "demo-child-1"
