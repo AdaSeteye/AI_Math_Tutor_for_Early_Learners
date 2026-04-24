@@ -50,8 +50,4 @@ Get-ChildItem -Path tutor -Recurse -File | Measure-Object -Property Length -Sum
 
 - **TTS cache** — keep under a separate path (e.g. `~/.cache/tts/`) and do not count toward the 75 MiB app bundle.
 
-## How to meet the budget
 
-- Do **not** ship `tutor/outputs/lora/`, Hugging Face cache, or merged FP16 weights inside `tutor/`.
-- Load **int4 GGUF** from user storage or download once; keep the **Python package** to source + small assets only.
-- Re-run: `python scripts/measure_footprint.py` after pruning.
