@@ -1,10 +1,11 @@
 """
-Child-facing Gradio demo: on open, Kinyarwanda welcome + question TTS, colourful count image, tap or voice.
+Child-facing Gradio demo: on open, Kinyarwanda welcome + count question TTS, image (e.g. goats), tap 0–20 or voice.
 Run: pip install -r requirements.txt && python demo.py
 
-Design: auto-start; feedback in the session language (Kinyarwanda by default, or ASR-detected);
-auto-advance after each answer (star animation on correct, then next image + TTS);
-10s silence = question repeat + pad highlight; 20s = simpler item. No on-image text; no mentor readouts.
+Design: one tap scores (no check button); mic: stop recording to submit. Feedback TTS in session language
+(including after ASR-detected code-switch); auto-advance (star on correct, then next + TTS).
+~3.5s grace then 10s without answer = question repeat + pad highlight; 20s = simpler item, no shaming.
+Set TUTOR_Q_AUDIO_GRACE_S to match your TTS length. No on-image text for pre-literate UIs.
 """
 
 from __future__ import annotations
@@ -29,9 +30,25 @@ from tutor.visuals import render_count_image
 
 # ASR for mic path: default on so 7-9 (voice-primary) works without extra env.
 MIC_ASR = os.environ.get("TUTOR_ENABLE_MIC_ASR", "1").lower() in ("1", "true", "yes", "on")
+# "Silence" = no input; delay counting until the question TTS can finish (seconds from load / new slide).
+Q_AUDIO_GRACE_S = float(os.environ.get("TUTOR_Q_AUDIO_GRACE_S", "3.5"))
 
 # Warm Kinyarwanda welcome; combined with the item prompt in TTS (no on-screen text).
 WELCOME_KIN = "Murakaza neza! Tugabane guhabura! "
+
+# Browser autoplay: retry after load + one capture-phase user gesture (tapping the pad is enough).
+TUTOR_STARTUP_JS = r"""
+() => {
+  function playQ() {
+    const el = document.getElementById("tutor_q_audio");
+    if (!el) { return; }
+    const a = el.querySelector("audio");
+    if (a && a.paused) { a.play().catch(function () {}); }
+  }
+  setTimeout(playQ, 500);
+  document.addEventListener("click", function h() { playQ(); document.removeEventListener("click", h, true); }, { capture: true, once: true });
+}
+"""
 
 
 def _load_session() -> TutorSession:
@@ -270,7 +287,6 @@ def build_ui() -> tuple[gr.Blocks, object, str]:
     with gr.Blocks(title="Math play") as demo:
         with gr.Column(elem_classes=["ux", "ux-tap"]) as main_ux:
             session_state = gr.State(_load_session())
-            num_picked = gr.State(0)
             awaiting = gr.State(True)
             stim_t0 = gr.State(-1.0)
             fired_10 = gr.State(False)
@@ -285,7 +301,6 @@ def build_ui() -> tuple[gr.Blocks, object, str]:
             )
 
             image = gr.Image(type="pil", height=300, show_label=False)
-            pick_show = gr.HTML(value='<p class="child-pick" aria-label="number">?</p>')
 
             with gr.Column(elem_classes=["play-stack"]):
                 with gr.Row():
@@ -308,14 +323,6 @@ def build_ui() -> tuple[gr.Blocks, object, str]:
                                 )
                                 num_btns.append(b)
 
-            def on_pick(n: int) -> tuple[int, str]:
-                return n, f'<p class="child-pick" aria-label="number">{n}</p>'
-
-            for n, b in zip(range(21), num_btns):
-                b.click(lambda x=n: on_pick(x), outputs=[num_picked, pick_show])
-            with gr.Row(equal_height=True):
-                check_tap = gr.Button("✅", elem_classes=["bar-btn"], min_width=90)
-                check_mic = gr.Button("🎤", elem_classes=["bar-btn", "mic-pri"], min_width=90, interactive=MIC_ASR)
             with gr.Row(visible=False):
                 next_btn = gr.Button("➡️", elem_classes=["bar-btn"], min_width=90, visible=False)
             with gr.Row(visible=False):
@@ -331,11 +338,10 @@ def build_ui() -> tuple[gr.Blocks, object, str]:
                 type="filepath",
                 autoplay=True,
                 show_label=False,
+                elem_id="tutor_q_audio",
             )
 
         silence_timer = gr.Timer(1, active=True)
-
-        pick_reset = '<p class="child-pick" aria-label="number">?</p>'
 
         out_boot: list[gr.Component] = [
             image,
@@ -343,8 +349,6 @@ def build_ui() -> tuple[gr.Blocks, object, str]:
             question_audio,
             feedback_audio,
             result,
-            num_picked,
-            pick_show,
             start_btn,
             last_repeat_wav,
             awaiting,
@@ -355,7 +359,7 @@ def build_ui() -> tuple[gr.Blocks, object, str]:
         ]
 
         def _new_silence_timer() -> tuple[bool, float, bool, bool]:
-            return True, time.time(), False, False
+            return True, time.time() + Q_AUDIO_GRACE_S, False, False
 
         def _pack_after_present(
             im,
@@ -373,8 +377,6 @@ def build_ui() -> tuple[gr.Blocks, object, str]:
                 play,
                 gr.update(value=None),
                 _empty_result_html(),
-                0,
-                pick_reset,
                 gr.update(),  # start_btn (hidden, session reset)
                 rep,
                 aw,
@@ -396,8 +398,6 @@ def build_ui() -> tuple[gr.Blocks, object, str]:
             question_audio,
             feedback_audio,
             session_state,
-            num_picked,
-            pick_show,
             start_btn,
             last_repeat_wav,
             awaiting,
@@ -416,8 +416,6 @@ def build_ui() -> tuple[gr.Blocks, object, str]:
                 play,
                 gr.update(value=None),
                 s2,
-                0,
-                pick_reset,
                 gr.update(),
                 r1,
                 aw,
@@ -428,7 +426,8 @@ def build_ui() -> tuple[gr.Blocks, object, str]:
             ]
 
         def _pack_after_scored(s2: TutorSession, msg: str, fb_wav: str | None) -> list:
-            """Spoken feedback (child's language) then auto-advance: next image + TTS, new silence window."""
+            """Spoken feedback (child's language) then auto-advance: next image + TTS, new silence window.
+            Keep feedback+next under ~2.5s by using one concatenated clip when possible."""
             u = gr.update()
             aw, t0, f10, d20 = _new_silence_timer()
             im, res_h, nplay, s3, r1, _r2 = do_next(s2)
@@ -440,8 +439,6 @@ def build_ui() -> tuple[gr.Blocks, object, str]:
                     u,
                     gr.update(value=fb_wav, autoplay=True) if fb_wav else u,
                     s3,
-                    0,
-                    pick_reset,
                     u,
                     None,
                     False,
@@ -458,8 +455,6 @@ def build_ui() -> tuple[gr.Blocks, object, str]:
                     gr.update(value=comb, autoplay=True),
                     gr.update(value=None),
                     s3,
-                    0,
-                    pick_reset,
                     u,
                     r1,
                     aw,
@@ -474,8 +469,6 @@ def build_ui() -> tuple[gr.Blocks, object, str]:
                 gr.update(value=nplay, autoplay=True) if nplay else u,
                 gr.update(value=fb_wav, autoplay=True) if fb_wav else u,
                 s3,
-                0,
-                pick_reset,
                 u,
                 r1,
                 aw,
@@ -493,7 +486,7 @@ def build_ui() -> tuple[gr.Blocks, object, str]:
             msg, fb_wav, s2, ok = do_score_from_mic(sess, rec)  # type: ignore[arg-type]
             if ok is None:
                 u = gr.update()
-                return [u, u, u, u, s2, u, u, u, u, u, u, u, u, u]
+                return [u, u, u, u, s2, u, u, u, u, u, u, u]
             return _pack_after_scored(s2, msg, fb_wav)
 
         out_tick: list[gr.Component] = [
@@ -543,9 +536,9 @@ def build_ui() -> tuple[gr.Blocks, object, str]:
                         gr.update(),
                         gr.update(),
                         gr.update(),
-                        gr.update(),
-                        t0,
-                        f10,
+                        False,
+                        -1.0,
+                        False,
                         True,
                     ]
                 aw2, t2, f10b, d20b = _new_silence_timer()
@@ -578,6 +571,22 @@ def build_ui() -> tuple[gr.Blocks, object, str]:
                 ]
             return _n_noop(n)
 
+        def _make_tap(v: int):
+            def _go(sess: TutorSession):
+                return on_check_tap(sess, v)
+
+            return _go
+
+        for ni, b in zip(range(21), num_btns):
+            b.click(_make_tap(ni), [session_state], out_next, show_progress="hidden")
+        if MIC_ASR:
+            mic.change(
+                on_check_voice,
+                [session_state, mic],
+                out_next,
+                show_progress="hidden",
+            )
+
         age.change(on_age, [age], [main_ux])
         demo.load(
             on_bootstrap,
@@ -585,8 +594,6 @@ def build_ui() -> tuple[gr.Blocks, object, str]:
             out_boot,
         )
         start_btn.click(on_bootstrap, None, out_boot)
-        check_tap.click(on_check_tap, [session_state, num_picked], out_next)
-        check_mic.click(on_check_voice, [session_state, mic], out_next)
         next_btn.click(on_next_fn, [session_state], out_next)
         silence_timer.tick(
             on_silence_tick,
@@ -620,7 +627,13 @@ if __name__ == "__main__":
     _port = _first_free_port(_host, _want)
     if _port != _want:
         print(f"Port {_want} is in use; using {_port} instead.", flush=True)
-    _kw: dict = {"server_name": _host, "server_port": _port, "theme": _theme, "css": _css}
+    _kw: dict = {
+        "server_name": _host,
+        "server_port": _port,
+        "theme": _theme,
+        "css": _css,
+        "js": TUTOR_STARTUP_JS,
+    }
     if _host in ("0.0.0.0", ""):
         open_url = f"http://127.0.0.1:{_port}"
     else:
@@ -629,4 +642,6 @@ if __name__ == "__main__":
     try:
         app.launch(**_kw)
     except TypeError:
-        app.launch(server_name=_host, server_port=_port, theme=_theme, css=_css)
+        app.launch(
+            server_name=_host, server_port=_port, theme=_theme, css=_css, js=TUTOR_STARTUP_JS
+        )
