@@ -1,0 +1,6 @@
+probe_id,subskill,item_ref,difficulty
+D1,counting,curriculum:c3,1
+D2,number_sense,curriculum:c1,1
+D3,addition,curriculum:a2,1
+D4,subtraction,curriculum:s2,1
+D5,word_problems,curriculum:w1,1

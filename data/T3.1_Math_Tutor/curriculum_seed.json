@@ -1,0 +1,149 @@
+{
+  "version": 1,
+  "subskills": [
+    "counting",
+    "number_sense",
+    "addition",
+    "subtraction",
+    "word_problems"
+  ],
+  "items": [
+    {
+      "id": "c1",
+      "subskill": "counting",
+      "difficulty": 1,
+      "age_band": "5-6",
+      "type": "count_image",
+      "prompt_en": "How many shapes do you see?",
+      "prompt_fr": "Combien de formes vois-tu?",
+      "prompt_kin": "Ubona ubugari bungana?",
+      "visual": { "mode": "blob_count", "n_objects": 4, "object_label": "circle" },
+      "expected_answer": 4
+    },
+    {
+      "id": "c2",
+      "subskill": "counting",
+      "difficulty": 1,
+      "age_band": "5-6",
+      "type": "count_image",
+      "prompt_en": "How many goats?",
+      "prompt_fr": "Combien de chèvres?",
+      "prompt_kin": "Imboazi zingahe izi?",
+      "visual": { "mode": "blob_count", "n_objects": 3, "object_label": "goat" },
+      "expected_answer": 3
+    },
+    {
+      "id": "c3",
+      "subskill": "counting",
+      "difficulty": 2,
+      "age_band": "6-7",
+      "type": "count_image",
+      "prompt_en": "Count the dots. How many are there?",
+      "prompt_fr": "Compte les points. Il y en a combien?",
+      "prompt_kin": "Bare utoba. Ni zingahe zose?",
+      "visual": { "mode": "blob_count", "n_objects": 7, "object_label": "dot" },
+      "expected_answer": 7
+    },
+    {
+      "id": "n1",
+      "subskill": "number_sense",
+      "difficulty": 1,
+      "age_band": "5-6",
+      "type": "tap_number",
+      "prompt_en": "Which number is bigger, 2 or 5? Tap the bigger one.",
+      "prompt_fr": "Quel est le plus grand, 2 ou 5? Touche le plus grand.",
+      "prompt_kin": "Ni uwuhe mwinshi, 2 cyangwa 5? Kanda ku mukuru.",
+      "options": [2, 5],
+      "expected_answer": 5
+    },
+    {
+      "id": "n2",
+      "subskill": "number_sense",
+      "difficulty": 1,
+      "age_band": "5-6",
+      "type": "tap_number",
+      "prompt_en": "Is 8 closer to 0 or 10? Tap 0 or 10.",
+      "prompt_fr": "8 est-il plus proche de 0 ou de 10? Touche 0 ou 10.",
+      "prompt_kin": "8 iri hafi ya 0 cyangwa 10? Kanda 0 cyangwa 10.",
+      "options": [0, 10],
+      "expected_answer": 10
+    },
+    {
+      "id": "a1",
+      "subskill": "addition",
+      "difficulty": 1,
+      "age_band": "5-6",
+      "type": "arithmetic",
+      "prompt_en": "What is 1 + 2 ?",
+      "prompt_fr": "Combien font 1 + 2 ?",
+      "prompt_kin": "1 n’ibindi 2 bigana ibihe?",
+      "expected_answer": 3
+    },
+    {
+      "id": "a2",
+      "subskill": "addition",
+      "difficulty": 2,
+      "age_band": "6-7",
+      "type": "arithmetic",
+      "prompt_en": "What is 4 + 3 ?",
+      "prompt_fr": "Combien font 4 + 3 ?",
+      "prompt_kin": "4 n’ibindi 3 bigana ibihe?",
+      "expected_answer": 7
+    },
+    {
+      "id": "a3",
+      "subskill": "addition",
+      "difficulty": 2,
+      "age_band": "6-7",
+      "type": "arithmetic",
+      "prompt_en": "What is 5 + 5 ?",
+      "prompt_fr": "Combien font 5 + 5 ?",
+      "prompt_kin": "5 n’ibindi 5 bigana ibihe?",
+      "expected_answer": 10
+    },
+    {
+      "id": "s1",
+      "subskill": "subtraction",
+      "difficulty": 1,
+      "age_band": "6-7",
+      "type": "arithmetic",
+      "prompt_en": "What is 3 − 1 ?",
+      "prompt_fr": "Combien font 3 − 1 ?",
+      "prompt_kin": "3 ukuyemo 1 bisigara ibihe?",
+      "expected_answer": 2
+    },
+    {
+      "id": "s2",
+      "subskill": "subtraction",
+      "difficulty": 2,
+      "age_band": "6-7",
+      "type": "arithmetic",
+      "prompt_en": "What is 6 − 2 ?",
+      "prompt_fr": "Combien font 6 − 2 ?",
+      "prompt_kin": "6 ukuyemo 2 bisigara ibihe?",
+      "expected_answer": 4
+    },
+    {
+      "id": "w1",
+      "subskill": "word_problems",
+      "difficulty": 1,
+      "age_band": "6-7",
+      "type": "word",
+      "prompt_en": "You have 2 apples. You get 1 more. How many apples in total?",
+      "prompt_fr": "Tu as 2 pommes. On t’en donne 1 de plus. Combien au total?",
+      "prompt_kin": "Ufite amapome 2. Wongera 1. Hamwe ni zingahe zose?",
+      "expected_answer": 3
+    },
+    {
+      "id": "w2",
+      "subskill": "word_problems",
+      "difficulty": 2,
+      "age_band": "7-8",
+      "type": "word",
+      "prompt_en": "Lily has 4 stickers. She uses 1. How many are left?",
+      "prompt_fr": "Lily a 4 autocollants. Elle en utilise 1. Il en reste combien?",
+      "prompt_kin": "Lily afite 4, akoreshe 1, zisigara zingahe?",
+      "expected_answer": 3
+    }
+  ]
+}

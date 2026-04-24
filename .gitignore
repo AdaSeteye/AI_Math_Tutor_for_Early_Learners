@@ -1,0 +1,41 @@
+# --- Local / generated (do not commit) ---
+tutor/outputs/
+data/T3.1_Math_Tutor/tts/
+data/T3.1_Math_Tutor/child_utterance_aug/
+data/T3.1_Math_Tutor/child_speech_rubric/
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+env/
+*.egg-info/
+.eggs/
+dist/
+build/
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+
+# --- Jupyter ---
+.ipynb_checkpoints/
+
+# --- OS / editors ---
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# --- Env & secrets (never commit) ---
+.env
+.env.*
+!.env.example
+*.pem

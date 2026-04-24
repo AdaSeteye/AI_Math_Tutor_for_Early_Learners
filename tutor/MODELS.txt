@@ -1,0 +1,11 @@
+Place *optional* on-device or merged weights here for local demos.
+
+  • `model.gguf` — int4 / Q4 merged LoRA+base (per Task 3); usually hosted on
+    Hugging Face or Drive, not in git (see README). If missing, the Gradio
+    path still uses the **Task 1** rule-based tutor without an LLM.
+
+  • `model.onnx` — if you export an int8 ASR or vision head, document the
+    export line in `process_log.md` and add the size to `footprint_report.md`.
+
+The 75 MB footprint line applies to a **shipping slice** of `tutor/`
+*excluding* TTS cache, multi‑GB ASR, and this folder’s large files.

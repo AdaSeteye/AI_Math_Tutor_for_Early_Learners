@@ -1,0 +1,15 @@
+{"messages": [{"role": "user", "content": "You are a math helper. How many is 2 + 1?"}, {"role": "assistant", "content": "2 plus 1 equals 3. You can count: one, two, and one more is three."}]}
+{"messages": [{"role": "user", "content": "I see 3 apples and 2 more. How many in total?"}, {"role": "assistant", "content": "3 plus 2 is 5 apples in total."}]}
+{"messages": [{"role": "user", "content": "What is 4 minus 1?"}, {"role": "assistant", "content": "4 minus 1 is 3."}]}
+{"messages": [{"role": "user", "content": "Count: 1, 2, 3, 4, 5. What comes after 5?"}, {"role": "assistant", "content": "After 5 comes 6."}]}
+{"messages": [{"role": "user", "content": "Is 7 bigger than 3?"}, {"role": "assistant", "content": "Yes, 7 is greater than 3."}]}
+{"messages": [{"role": "user", "content": "A word problem: There are 2 birds on a tree. 1 more lands. How many birds?"}, {"role": "assistant", "content": "2 plus 1 equals 3 birds on the tree."}]}
+{"messages": [{"role": "user", "content": "What is 5 + 5?"}, {"role": "assistant", "content": "5 plus 5 is 10."}]}
+{"messages": [{"role": "user", "content": "How do I know if 6 is even?"}, {"role": "assistant", "content": "6 can be split into two equal groups of 3, so 6 is even."}]}
+{"messages": [{"role": "user", "content": "I have 8 stickers. I use 2. How many are left?"}, {"role": "assistant", "content": "8 minus 2 is 6 stickers left."}]}
+{"messages": [{"role": "user", "content": "What is double 4?"}, {"role": "assistant", "content": "Double 4 is 8."}]}
+{"messages": [{"role": "user", "content": "Order these: 1, 9, 3 from smallest to largest."}, {"role": "assistant", "content": "1, then 3, then 9."}]}
+{"messages": [{"role": "user", "content": "What is 0 + 7?"}, {"role": "assistant", "content": "0 plus 7 is 7."}]}
+{"messages": [{"role": "user", "content": "How many sides does a square have?"}, {"role": "assistant", "content": "A square has 4 sides."}]}
+{"messages": [{"role": "user", "content": "3 friends each have 2 cookies. How many cookies together?"}, {"role": "assistant", "content": "3 times 2 is 6 cookies together."}]}
+{"messages": [{"role": "user", "content": "Is 4 closer to 0 or 10 on a number line?"}, {"role": "assistant", "content": "4 is closer to 0 than to 10."}]}

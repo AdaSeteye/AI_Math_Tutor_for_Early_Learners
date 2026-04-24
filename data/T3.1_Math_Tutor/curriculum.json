@@ -1,0 +1,838 @@
+{
+  "version": 1,
+  "subskills": [
+    "counting",
+    "number_sense",
+    "addition",
+    "subtraction",
+    "word_problems"
+  ],
+  "items": [
+    {
+      "id": "c1",
+      "subskill": "counting",
+      "difficulty": 1,
+      "age_band": "5-6",
+      "type": "count_image",
+      "prompt_en": "How many shapes do you see?",
+      "prompt_fr": "Combien de formes vois-tu?",
+      "prompt_kin": "Ubona ubugari bungana?",
+      "visual": {
+        "mode": "blob_count",
+        "n_objects": 4,
+        "object_label": "circle"
+      },
+      "expected_answer": 4
+    },
+    {
+      "id": "c2",
+      "subskill": "counting",
+      "difficulty": 1,
+      "age_band": "5-6",
+      "type": "count_image",
+      "prompt_en": "How many goats?",
+      "prompt_fr": "Combien de chèvres?",
+      "prompt_kin": "Imboazi zingahe izi?",
+      "visual": {
+        "mode": "blob_count",
+        "n_objects": 3,
+        "object_label": "goat"
+      },
+      "expected_answer": 3
+    },
+    {
+      "id": "c3",
+      "subskill": "counting",
+      "difficulty": 2,
+      "age_band": "6-7",
+      "type": "count_image",
+      "prompt_en": "Count the dots. How many are there?",
+      "prompt_fr": "Compte les points. Il y en a combien?",
+      "prompt_kin": "Bare utoba. Ni zingahe zose?",
+      "visual": {
+        "mode": "blob_count",
+        "n_objects": 7,
+        "object_label": "dot"
+      },
+      "expected_answer": 7
+    },
+    {
+      "id": "n1",
+      "subskill": "number_sense",
+      "difficulty": 1,
+      "age_band": "5-6",
+      "type": "tap_number",
+      "prompt_en": "Which number is bigger, 2 or 5? Tap the bigger one.",
+      "prompt_fr": "Quel est le plus grand, 2 ou 5? Touche le plus grand.",
+      "prompt_kin": "Ni uwuhe mwinshi, 2 cyangwa 5? Kanda ku mukuru.",
+      "options": [
+        2,
+        5
+      ],
+      "expected_answer": 5
+    },
+    {
+      "id": "n2",
+      "subskill": "number_sense",
+      "difficulty": 1,
+      "age_band": "5-6",
+      "type": "tap_number",
+      "prompt_en": "Is 8 closer to 0 or 10? Tap 0 or 10.",
+      "prompt_fr": "8 est-il plus proche de 0 ou de 10? Touche 0 ou 10.",
+      "prompt_kin": "8 iri hafi ya 0 cyangwa 10? Kanda 0 cyangwa 10.",
+      "options": [
+        0,
+        10
+      ],
+      "expected_answer": 10
+    },
+    {
+      "id": "a1",
+      "subskill": "addition",
+      "difficulty": 1,
+      "age_band": "5-6",
+      "type": "arithmetic",
+      "prompt_en": "What is 1 + 2 ?",
+      "prompt_fr": "Combien font 1 + 2 ?",
+      "prompt_kin": "1 n’ibindi 2 bigana ibihe?",
+      "expected_answer": 3
+    },
+    {
+      "id": "a2",
+      "subskill": "addition",
+      "difficulty": 2,
+      "age_band": "6-7",
+      "type": "arithmetic",
+      "prompt_en": "What is 4 + 3 ?",
+      "prompt_fr": "Combien font 4 + 3 ?",
+      "prompt_kin": "4 n’ibindi 3 bigana ibihe?",
+      "expected_answer": 7
+    },
+    {
+      "id": "a3",
+      "subskill": "addition",
+      "difficulty": 2,
+      "age_band": "6-7",
+      "type": "arithmetic",
+      "prompt_en": "What is 5 + 5 ?",
+      "prompt_fr": "Combien font 5 + 5 ?",
+      "prompt_kin": "5 n’ibindi 5 bigana ibihe?",
+      "expected_answer": 10
+    },
+    {
+      "id": "s1",
+      "subskill": "subtraction",
+      "difficulty": 1,
+      "age_band": "6-7",
+      "type": "arithmetic",
+      "prompt_en": "What is 3 − 1 ?",
+      "prompt_fr": "Combien font 3 − 1 ?",
+      "prompt_kin": "3 ukuyemo 1 bisigara ibihe?",
+      "expected_answer": 2
+    },
+    {
+      "id": "s2",
+      "subskill": "subtraction",
+      "difficulty": 2,
+      "age_band": "6-7",
+      "type": "arithmetic",
+      "prompt_en": "What is 6 − 2 ?",
+      "prompt_fr": "Combien font 6 − 2 ?",
+      "prompt_kin": "6 ukuyemo 2 bisigara ibihe?",
+      "expected_answer": 4
+    },
+    {
+      "id": "w1",
+      "subskill": "word_problems",
+      "difficulty": 1,
+      "age_band": "6-7",
+      "type": "word",
+      "prompt_en": "You have 2 apples. You get 1 more. How many apples in total?",
+      "prompt_fr": "Tu as 2 pommes. On t’en donne 1 de plus. Combien au total?",
+      "prompt_kin": "Ufite amapome 2. Wongera 1. Hamwe ni zingahe zose?",
+      "expected_answer": 3
+    },
+    {
+      "id": "w2",
+      "subskill": "word_problems",
+      "difficulty": 2,
+      "age_band": "7-8",
+      "type": "word",
+      "prompt_en": "Lily has 4 stickers. She uses 1. How many are left?",
+      "prompt_fr": "Lily a 4 autocollants. Elle en utilise 1. Il en reste combien?",
+      "prompt_kin": "Lily afite 4, akoreshe 1, zisigara zingahe?",
+      "expected_answer": 3
+    },
+    {
+      "id": "g001_c",
+      "subskill": "counting",
+      "difficulty": 1,
+      "age_band": "5-6",
+      "type": "count_image",
+      "prompt_en": "How many stars do you see?",
+      "prompt_fr": "Combien de étoiles vois-tu ?",
+      "prompt_kin": "Ureba inyenyeri, zingahe? Zose ni zingahe?",
+      "visual": {
+        "mode": "blob_count",
+        "n_objects": 5,
+        "object_label": "star"
+      },
+      "expected_answer": 5
+    },
+    {
+      "id": "g002_n",
+      "subskill": "number_sense",
+      "difficulty": 1,
+      "age_band": "5-6",
+      "type": "tap_number",
+      "prompt_en": "Which is bigger, 3 or 8? Tap the bigger one.",
+      "prompt_fr": "Lequel est le plus grand, 3 ou 8 ? Touche le plus grand.",
+      "prompt_kin": "Ni uwuhe mwinshi, 3 cyangwa 8 ? Kanda uku mukuru kose.",
+      "options": [
+        3,
+        8
+      ],
+      "expected_answer": 8
+    },
+    {
+      "id": "g003_a",
+      "subskill": "addition",
+      "difficulty": 1,
+      "age_band": "6-7",
+      "type": "arithmetic",
+      "prompt_en": "What is 4 + 7 ?",
+      "prompt_fr": "Combien font 4 + 7 ?",
+      "prompt_kin": "4 n'ibindi 7 bigana ibihe?",
+      "expected_answer": 11
+    },
+    {
+      "id": "g004_s",
+      "subskill": "subtraction",
+      "difficulty": 1,
+      "age_band": "6-7",
+      "type": "arithmetic",
+      "prompt_en": "What is 13 − 7 ?",
+      "prompt_fr": "Combien font 13 − 7 ?",
+      "prompt_kin": "13 ukuyemo 7 bisigara ibihe?",
+      "expected_answer": 6
+    },
+    {
+      "id": "g005_w",
+      "subskill": "word_problems",
+      "difficulty": 1,
+      "age_band": "6-7",
+      "type": "word",
+      "prompt_en": "You have 4 stickers. You get 1 more. How many stickers in total?",
+      "prompt_fr": "Tu as 4 autocollants. On t’en donne 1 de plus. Combien au total?",
+      "prompt_kin": "Ufite ibishushanyo 4. Bongeraho 1 bundi. Byose ni bingahe? Hamwe =?",
+      "expected_answer": 5
+    },
+    {
+      "id": "g006_c",
+      "subskill": "counting",
+      "difficulty": 2,
+      "age_band": "5-6",
+      "type": "count_image",
+      "prompt_en": "How many hearts do you see?",
+      "prompt_fr": "Combien de cœurs vois-tu ?",
+      "prompt_kin": "Ureba imitima, zingahe? Zose ni zingahe?",
+      "visual": {
+        "mode": "blob_count",
+        "n_objects": 6,
+        "object_label": "heart"
+      },
+      "expected_answer": 6
+    },
+    {
+      "id": "g007_n2",
+      "subskill": "number_sense",
+      "difficulty": 2,
+      "age_band": "5-6",
+      "type": "tap_number",
+      "prompt_en": "Is 3 closer to 0 or 10? Tap 0 or 10.",
+      "prompt_fr": "Est-ce que 3 est plus proche de 0 ou de 10? Touche 0 ou 10.",
+      "prompt_kin": "Ni yihariye, 3 ifata ku kure cyane ni 0 cyangwa 10? Kanda 0 cyangwa 10.",
+      "options": [
+        0,
+        10
+      ],
+      "expected_answer": 0
+    },
+    {
+      "id": "g008_a",
+      "subskill": "addition",
+      "difficulty": 2,
+      "age_band": "5-6",
+      "type": "arithmetic",
+      "prompt_en": "What is 4 + 2 ?",
+      "prompt_fr": "Combien font 4 + 2 ?",
+      "prompt_kin": "4 n'ibindi 2 bigana ibihe?",
+      "expected_answer": 6
+    },
+    {
+      "id": "g009_s",
+      "subskill": "subtraction",
+      "difficulty": 1,
+      "age_band": "6-7",
+      "type": "arithmetic",
+      "prompt_en": "What is 4 − 1 ?",
+      "prompt_fr": "Combien font 4 − 1 ?",
+      "prompt_kin": "4 ukuyemo 1 bisigara ibihe?",
+      "expected_answer": 3
+    },
+    {
+      "id": "g010_w2",
+      "subskill": "word_problems",
+      "difficulty": 2,
+      "age_band": "7-8",
+      "type": "word",
+      "prompt_en": "Sam has 6 balls. 1 roll away. How many are left?",
+      "prompt_fr": "Sam a 6 balles. 1 roulent. Il en reste combien?",
+      "prompt_kin": "Sam afite mpinga 6. 1 zizimuka. Zisigaye ni zingahe?",
+      "expected_answer": 5
+    },
+    {
+      "id": "g011_c",
+      "subskill": "counting",
+      "difficulty": 2,
+      "age_band": "6-7",
+      "type": "count_image",
+      "prompt_en": "How many trees do you see?",
+      "prompt_fr": "Combien de arbres vois-tu ?",
+      "prompt_kin": "Ureba ibiti, zingahe? Zose ni zingahe?",
+      "visual": {
+        "mode": "blob_count",
+        "n_objects": 7,
+        "object_label": "tree"
+      },
+      "expected_answer": 7
+    },
+    {
+      "id": "g012_n",
+      "subskill": "number_sense",
+      "difficulty": 2,
+      "age_band": "5-6",
+      "type": "tap_number",
+      "prompt_en": "Which is bigger, 5 or 8? Tap the bigger one.",
+      "prompt_fr": "Lequel est le plus grand, 5 ou 8 ? Touche le plus grand.",
+      "prompt_kin": "Ni uwuhe mwinshi, 5 cyangwa 8 ? Kanda uku mukuru kose.",
+      "options": [
+        5,
+        8
+      ],
+      "expected_answer": 8
+    },
+    {
+      "id": "g013_a",
+      "subskill": "addition",
+      "difficulty": 2,
+      "age_band": "6-7",
+      "type": "arithmetic",
+      "prompt_en": "What is 4 + 7 ?",
+      "prompt_fr": "Combien font 4 + 7 ?",
+      "prompt_kin": "4 n'ibindi 7 bigana ibihe?",
+      "expected_answer": 11
+    },
+    {
+      "id": "g014_s",
+      "subskill": "subtraction",
+      "difficulty": 2,
+      "age_band": "6-7",
+      "type": "arithmetic",
+      "prompt_en": "What is 7 − 6 ?",
+      "prompt_fr": "Combien font 7 − 6 ?",
+      "prompt_kin": "7 ukuyemo 6 bisigara ibihe?",
+      "expected_answer": 1
+    },
+    {
+      "id": "g015_w",
+      "subskill": "word_problems",
+      "difficulty": 1,
+      "age_band": "6-7",
+      "type": "word",
+      "prompt_en": "You have 4 stickers. You get 3 more. How many stickers in total?",
+      "prompt_fr": "Tu as 4 autocollants. On t’en donne 3 de plus. Combien au total?",
+      "prompt_kin": "Ufite ibishushanyo 4. Bongeraho 3 bundi. Byose ni bingahe? Hamwe =?",
+      "expected_answer": 7
+    },
+    {
+      "id": "g016_c",
+      "subskill": "counting",
+      "difficulty": 2,
+      "age_band": "6-7",
+      "type": "count_image",
+      "prompt_en": "How many cars do you see?",
+      "prompt_fr": "Combien de voitures vois-tu ?",
+      "prompt_kin": "Ureba imodoka, zingahe? Zose ni zingahe?",
+      "visual": {
+        "mode": "blob_count",
+        "n_objects": 8,
+        "object_label": "car"
+      },
+      "expected_answer": 8
+    },
+    {
+      "id": "g017_n2",
+      "subskill": "number_sense",
+      "difficulty": 1,
+      "age_band": "5-6",
+      "type": "tap_number",
+      "prompt_en": "Is 5 closer to 0 or 10? Tap 0 or 10.",
+      "prompt_fr": "Est-ce que 5 est plus proche de 0 ou de 10? Touche 0 ou 10.",
+      "prompt_kin": "Ni yihariye, 5 ifata ku kure cyane ni 0 cyangwa 10? Kanda 0 cyangwa 10.",
+      "options": [
+        0,
+        10
+      ],
+      "expected_answer": 0
+    },
+    {
+      "id": "g018_a",
+      "subskill": "addition",
+      "difficulty": 1,
+      "age_band": "5-6",
+      "type": "arithmetic",
+      "prompt_en": "What is 4 + 2 ?",
+      "prompt_fr": "Combien font 4 + 2 ?",
+      "prompt_kin": "4 n'ibindi 2 bigana ibihe?",
+      "expected_answer": 6
+    },
+    {
+      "id": "g019_s",
+      "subskill": "subtraction",
+      "difficulty": 1,
+      "age_band": "6-7",
+      "type": "arithmetic",
+      "prompt_en": "What is 10 − 7 ?",
+      "prompt_fr": "Combien font 10 − 7 ?",
+      "prompt_kin": "10 ukuyemo 7 bisigara ibihe?",
+      "expected_answer": 3
+    },
+    {
+      "id": "g020_w2",
+      "subskill": "word_problems",
+      "difficulty": 2,
+      "age_band": "7-8",
+      "type": "word",
+      "prompt_en": "Sam has 6 balls. 2 roll away. How many are left?",
+      "prompt_fr": "Sam a 6 balles. 2 roulent. Il en reste combien?",
+      "prompt_kin": "Sam afite mpinga 6. 2 zizimuka. Zisigaye ni zingahe?",
+      "expected_answer": 4
+    },
+    {
+      "id": "g021_c",
+      "subskill": "counting",
+      "difficulty": 1,
+      "age_band": "6-7",
+      "type": "count_image",
+      "prompt_en": "How many blocks do you see?",
+      "prompt_fr": "Combien de blocs vois-tu ?",
+      "prompt_kin": "Ureba ingingo, zingahe? Zose ni zingahe?",
+      "visual": {
+        "mode": "blob_count",
+        "n_objects": 9,
+        "object_label": "block"
+      },
+      "expected_answer": 9
+    },
+    {
+      "id": "g022_n",
+      "subskill": "number_sense",
+      "difficulty": 2,
+      "age_band": "5-6",
+      "type": "tap_number",
+      "prompt_en": "Which is bigger, 1 or 6? Tap the bigger one.",
+      "prompt_fr": "Lequel est le plus grand, 1 ou 6 ? Touche le plus grand.",
+      "prompt_kin": "Ni uwuhe mwinshi, 1 cyangwa 6 ? Kanda uku mukuru kose.",
+      "options": [
+        1,
+        6
+      ],
+      "expected_answer": 6
+    },
+    {
+      "id": "g023_a",
+      "subskill": "addition",
+      "difficulty": 2,
+      "age_band": "6-7",
+      "type": "arithmetic",
+      "prompt_en": "What is 4 + 7 ?",
+      "prompt_fr": "Combien font 4 + 7 ?",
+      "prompt_kin": "4 n'ibindi 7 bigana ibihe?",
+      "expected_answer": 11
+    },
+    {
+      "id": "g024_s",
+      "subskill": "subtraction",
+      "difficulty": 2,
+      "age_band": "6-7",
+      "type": "arithmetic",
+      "prompt_en": "What is 13 − 8 ?",
+      "prompt_fr": "Combien font 13 − 8 ?",
+      "prompt_kin": "13 ukuyemo 8 bisigara ibihe?",
+      "expected_answer": 5
+    },
+    {
+      "id": "g025_w",
+      "subskill": "word_problems",
+      "difficulty": 1,
+      "age_band": "6-7",
+      "type": "word",
+      "prompt_en": "You have 4 stickers. You get 1 more. How many stickers in total?",
+      "prompt_fr": "Tu as 4 autocollants. On t’en donne 1 de plus. Combien au total?",
+      "prompt_kin": "Ufite ibishushanyo 4. Bongeraho 1 bundi. Byose ni bingahe? Hamwe =?",
+      "expected_answer": 5
+    },
+    {
+      "id": "g026_c",
+      "subskill": "counting",
+      "difficulty": 1,
+      "age_band": "6-7",
+      "type": "count_image",
+      "prompt_en": "How many apples do you see?",
+      "prompt_fr": "Combien de pommes vois-tu ?",
+      "prompt_kin": "Ureba amapapayi, zingahe? Zose ni zingahe?",
+      "visual": {
+        "mode": "blob_count",
+        "n_objects": 10,
+        "object_label": "apple"
+      },
+      "expected_answer": 10
+    },
+    {
+      "id": "g027_n2",
+      "subskill": "number_sense",
+      "difficulty": 2,
+      "age_band": "5-6",
+      "type": "tap_number",
+      "prompt_en": "Is 7 closer to 0 or 10? Tap 0 or 10.",
+      "prompt_fr": "Est-ce que 7 est plus proche de 0 ou de 10? Touche 0 ou 10.",
+      "prompt_kin": "Ni yihariye, 7 ifata ku kure cyane ni 0 cyangwa 10? Kanda 0 cyangwa 10.",
+      "options": [
+        0,
+        10
+      ],
+      "expected_answer": 10
+    },
+    {
+      "id": "g028_a",
+      "subskill": "addition",
+      "difficulty": 1,
+      "age_band": "5-6",
+      "type": "arithmetic",
+      "prompt_en": "What is 4 + 2 ?",
+      "prompt_fr": "Combien font 4 + 2 ?",
+      "prompt_kin": "4 n'ibindi 2 bigana ibihe?",
+      "expected_answer": 6
+    },
+    {
+      "id": "g029_s",
+      "subskill": "subtraction",
+      "difficulty": 2,
+      "age_band": "6-7",
+      "type": "arithmetic",
+      "prompt_en": "What is 4 − 1 ?",
+      "prompt_fr": "Combien font 4 − 1 ?",
+      "prompt_kin": "4 ukuyemo 1 bisigara ibihe?",
+      "expected_answer": 3
+    },
+    {
+      "id": "g030_w2",
+      "subskill": "word_problems",
+      "difficulty": 2,
+      "age_band": "7-8",
+      "type": "word",
+      "prompt_en": "Sam has 6 balls. 3 roll away. How many are left?",
+      "prompt_fr": "Sam a 6 balles. 3 roulent. Il en reste combien?",
+      "prompt_kin": "Sam afite mpinga 6. 3 zizimuka. Zisigaye ni zingahe?",
+      "expected_answer": 3
+    },
+    {
+      "id": "g031_c",
+      "subskill": "counting",
+      "difficulty": 1,
+      "age_band": "5-6",
+      "type": "count_image",
+      "prompt_en": "How many birds do you see?",
+      "prompt_fr": "Combien de oiseaux vois-tu ?",
+      "prompt_kin": "Ureba ibinyoni, zingahe? Zose ni zingahe?",
+      "visual": {
+        "mode": "blob_count",
+        "n_objects": 2,
+        "object_label": "bird"
+      },
+      "expected_answer": 2
+    },
+    {
+      "id": "g032_n",
+      "subskill": "number_sense",
+      "difficulty": 1,
+      "age_band": "5-6",
+      "type": "tap_number",
+      "prompt_en": "Which is bigger, 3 or 6? Tap the bigger one.",
+      "prompt_fr": "Lequel est le plus grand, 3 ou 6 ? Touche le plus grand.",
+      "prompt_kin": "Ni uwuhe mwinshi, 3 cyangwa 6 ? Kanda uku mukuru kose.",
+      "options": [
+        3,
+        6
+      ],
+      "expected_answer": 6
+    },
+    {
+      "id": "g033_a",
+      "subskill": "addition",
+      "difficulty": 1,
+      "age_band": "6-7",
+      "type": "arithmetic",
+      "prompt_en": "What is 4 + 7 ?",
+      "prompt_fr": "Combien font 4 + 7 ?",
+      "prompt_kin": "4 n'ibindi 7 bigana ibihe?",
+      "expected_answer": 11
+    },
+    {
+      "id": "g034_s",
+      "subskill": "subtraction",
+      "difficulty": 1,
+      "age_band": "6-7",
+      "type": "arithmetic",
+      "prompt_en": "What is 7 − 4 ?",
+      "prompt_fr": "Combien font 7 − 4 ?",
+      "prompt_kin": "7 ukuyemo 4 bisigara ibihe?",
+      "expected_answer": 3
+    },
+    {
+      "id": "g035_w",
+      "subskill": "word_problems",
+      "difficulty": 1,
+      "age_band": "6-7",
+      "type": "word",
+      "prompt_en": "You have 4 stickers. You get 3 more. How many stickers in total?",
+      "prompt_fr": "Tu as 4 autocollants. On t’en donne 3 de plus. Combien au total?",
+      "prompt_kin": "Ufite ibishushanyo 4. Bongeraho 3 bundi. Byose ni bingahe? Hamwe =?",
+      "expected_answer": 7
+    },
+    {
+      "id": "g036_c",
+      "subskill": "counting",
+      "difficulty": 2,
+      "age_band": "5-6",
+      "type": "count_image",
+      "prompt_en": "How many fish do you see?",
+      "prompt_fr": "Combien de poissons vois-tu ?",
+      "prompt_kin": "Ureba amafi, zingahe? Zose ni zingahe?",
+      "visual": {
+        "mode": "blob_count",
+        "n_objects": 3,
+        "object_label": "fish"
+      },
+      "expected_answer": 3
+    },
+    {
+      "id": "g037_n2",
+      "subskill": "number_sense",
+      "difficulty": 1,
+      "age_band": "5-6",
+      "type": "tap_number",
+      "prompt_en": "Is 3 closer to 0 or 10? Tap 0 or 10.",
+      "prompt_fr": "Est-ce que 3 est plus proche de 0 ou de 10? Touche 0 ou 10.",
+      "prompt_kin": "Ni yihariye, 3 ifata ku kure cyane ni 0 cyangwa 10? Kanda 0 cyangwa 10.",
+      "options": [
+        0,
+        10
+      ],
+      "expected_answer": 0
+    },
+    {
+      "id": "g038_a",
+      "subskill": "addition",
+      "difficulty": 2,
+      "age_band": "5-6",
+      "type": "arithmetic",
+      "prompt_en": "What is 4 + 2 ?",
+      "prompt_fr": "Combien font 4 + 2 ?",
+      "prompt_kin": "4 n'ibindi 2 bigana ibihe?",
+      "expected_answer": 6
+    },
+    {
+      "id": "g039_s",
+      "subskill": "subtraction",
+      "difficulty": 2,
+      "age_band": "6-7",
+      "type": "arithmetic",
+      "prompt_en": "What is 10 − 7 ?",
+      "prompt_fr": "Combien font 10 − 7 ?",
+      "prompt_kin": "10 ukuyemo 7 bisigara ibihe?",
+      "expected_answer": 3
+    },
+    {
+      "id": "g040_w2",
+      "subskill": "word_problems",
+      "difficulty": 2,
+      "age_band": "7-8",
+      "type": "word",
+      "prompt_en": "Sam has 6 balls. 1 roll away. How many are left?",
+      "prompt_fr": "Sam a 6 balles. 1 roulent. Il en reste combien?",
+      "prompt_kin": "Sam afite mpinga 6. 1 zizimuka. Zisigaye ni zingahe?",
+      "expected_answer": 5
+    },
+    {
+      "id": "g041_c",
+      "subskill": "counting",
+      "difficulty": 2,
+      "age_band": "5-6",
+      "type": "count_image",
+      "prompt_en": "How many cups do you see?",
+      "prompt_fr": "Combien de tasses vois-tu ?",
+      "prompt_kin": "Ureba ibyansi, zingahe? Zose ni zingahe?",
+      "visual": {
+        "mode": "blob_count",
+        "n_objects": 4,
+        "object_label": "cup"
+      },
+      "expected_answer": 4
+    },
+    {
+      "id": "g042_n",
+      "subskill": "number_sense",
+      "difficulty": 2,
+      "age_band": "5-6",
+      "type": "tap_number",
+      "prompt_en": "Which is bigger, 5 or 10? Tap the bigger one.",
+      "prompt_fr": "Lequel est le plus grand, 5 ou 10 ? Touche le plus grand.",
+      "prompt_kin": "Ni uwuhe mwinshi, 5 cyangwa 10 ? Kanda uku mukuru kose.",
+      "options": [
+        5,
+        10
+      ],
+      "expected_answer": 10
+    },
+    {
+      "id": "g043_a",
+      "subskill": "addition",
+      "difficulty": 1,
+      "age_band": "6-7",
+      "type": "arithmetic",
+      "prompt_en": "What is 4 + 7 ?",
+      "prompt_fr": "Combien font 4 + 7 ?",
+      "prompt_kin": "4 n'ibindi 7 bigana ibihe?",
+      "expected_answer": 11
+    },
+    {
+      "id": "g044_s",
+      "subskill": "subtraction",
+      "difficulty": 1,
+      "age_band": "6-7",
+      "type": "arithmetic",
+      "prompt_en": "What is 13 − 9 ?",
+      "prompt_fr": "Combien font 13 − 9 ?",
+      "prompt_kin": "13 ukuyemo 9 bisigara ibihe?",
+      "expected_answer": 4
+    },
+    {
+      "id": "g045_w",
+      "subskill": "word_problems",
+      "difficulty": 1,
+      "age_band": "6-7",
+      "type": "word",
+      "prompt_en": "You have 4 stickers. You get 1 more. How many stickers in total?",
+      "prompt_fr": "Tu as 4 autocollants. On t’en donne 1 de plus. Combien au total?",
+      "prompt_kin": "Ufite ibishushanyo 4. Bongeraho 1 bundi. Byose ni bingahe? Hamwe =?",
+      "expected_answer": 5
+    },
+    {
+      "id": "g046_c",
+      "subskill": "counting",
+      "difficulty": 2,
+      "age_band": "5-6",
+      "type": "count_image",
+      "prompt_en": "How many toys do you see?",
+      "prompt_fr": "Combien de jouets vois-tu ?",
+      "prompt_kin": "Ureba imikino, zingahe? Zose ni zingahe?",
+      "visual": {
+        "mode": "blob_count",
+        "n_objects": 5,
+        "object_label": "toy"
+      },
+      "expected_answer": 5
+    },
+    {
+      "id": "g047_n2",
+      "subskill": "number_sense",
+      "difficulty": 2,
+      "age_band": "5-6",
+      "type": "tap_number",
+      "prompt_en": "Is 5 closer to 0 or 10? Tap 0 or 10.",
+      "prompt_fr": "Est-ce que 5 est plus proche de 0 ou de 10? Touche 0 ou 10.",
+      "prompt_kin": "Ni yihariye, 5 ifata ku kure cyane ni 0 cyangwa 10? Kanda 0 cyangwa 10.",
+      "options": [
+        0,
+        10
+      ],
+      "expected_answer": 0
+    },
+    {
+      "id": "g048_a",
+      "subskill": "addition",
+      "difficulty": 2,
+      "age_band": "5-6",
+      "type": "arithmetic",
+      "prompt_en": "What is 4 + 2 ?",
+      "prompt_fr": "Combien font 4 + 2 ?",
+      "prompt_kin": "4 n'ibindi 2 bigana ibihe?",
+      "expected_answer": 6
+    },
+    {
+      "id": "g049_s",
+      "subskill": "subtraction",
+      "difficulty": 1,
+      "age_band": "6-7",
+      "type": "arithmetic",
+      "prompt_en": "What is 4 − 1 ?",
+      "prompt_fr": "Combien font 4 − 1 ?",
+      "prompt_kin": "4 ukuyemo 1 bisigara ibihe?",
+      "expected_answer": 3
+    },
+    {
+      "id": "g050_w2",
+      "subskill": "word_problems",
+      "difficulty": 2,
+      "age_band": "7-8",
+      "type": "word",
+      "prompt_en": "Sam has 6 balls. 2 roll away. How many are left?",
+      "prompt_fr": "Sam a 6 balles. 2 roulent. Il en reste combien?",
+      "prompt_kin": "Sam afite mpinga 6. 2 zizimuka. Zisigaye ni zingahe?",
+      "expected_answer": 4
+    },
+    {
+      "id": "g051_c",
+      "subskill": "counting",
+      "difficulty": 1,
+      "age_band": "5-6",
+      "type": "count_image",
+      "prompt_en": "How many flowers do you see?",
+      "prompt_fr": "Combien de fleurs vois-tu ?",
+      "prompt_kin": "Ureba indabyo, zingahe? Zose ni zingahe?",
+      "visual": {
+        "mode": "blob_count",
+        "n_objects": 6,
+        "object_label": "flower"
+      },
+      "expected_answer": 6
+    },
+    {
+      "id": "g052_n",
+      "subskill": "number_sense",
+      "difficulty": 2,
+      "age_band": "5-6",
+      "type": "tap_number",
+      "prompt_en": "Which is bigger, 1 or 4? Tap the bigger one.",
+      "prompt_fr": "Lequel est le plus grand, 1 ou 4 ? Touche le plus grand.",
+      "prompt_kin": "Ni uwuhe mwinshi, 1 cyangwa 4 ? Kanda uku mukuru kose.",
+      "options": [
+        1,
+        4
+      ],
+      "expected_answer": 4
+    }
+  ]
+}
