@@ -4,19 +4,7 @@
 
 **Constraint (brief):** total on-device footprint **≤ 75 MiB** (TTS cache excluded from this budget).
 
-## `du` equivalent (repo root)
 
-```
-# Unix / Git Bash
-du -sh tutor/
-
-# PowerShell (bytes)
-Get-ChildItem -Path tutor -Recurse -File | Measure-Object -Property Length -Sum
-
-# This run (Python walk): **175.77 MiB**
-```
-
-## Total `tutor/`: **175.77 MiB** — vs **75 MiB** — **OVER**
 
 ### Shipping-sized estimates (dev artifacts removed)
 
